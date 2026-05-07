@@ -10,6 +10,8 @@ public class ExtentManager {
         ExtentSparkReporter reporter =
                 new ExtentSparkReporter("reports/report.html");
 
+        reporter.config().setReportName("OrangeHRM Automation Report");
+
         ExtentReports extent = new ExtentReports();
 
         extent.attachReporter(reporter);

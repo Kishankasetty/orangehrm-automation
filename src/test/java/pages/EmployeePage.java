@@ -26,6 +26,9 @@ public class EmployeePage {
 
     By lastName =
             By.name("lastName");
+    
+    By employeeId =
+            By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
 
     By saveBtn =
             By.xpath("//button[@type='submit']");
@@ -47,23 +50,28 @@ public class EmployeePage {
 
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(firstName));
-
+        
         driver.findElement(firstName).sendKeys(fName);
 
         driver.findElement(lastName).sendKeys(lName);
 
-        driver.findElement(firstName).sendKeys(fName);
+        String uniqueId =
+                String.valueOf(System.currentTimeMillis() % 1000000);
 
-        driver.findElement(lastName).sendKeys(lName);
+        driver.findElement(employeeId).clear();
+
+        driver.findElement(employeeId).sendKeys(uniqueId);
 
         wait.until(
             ExpectedConditions.invisibilityOfElementLocated(
                 By.className("oxd-form-loader")));
 
+
         wait.until(
             ExpectedConditions.elementToBeClickable(saveBtn));
 
         driver.findElement(saveBtn).click();
+
         
     }
 }

@@ -7,7 +7,9 @@
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
+          <include name="setupReport"/>
           <include name="addEmployeeTest"/>
+          <include name="endReport"/>
         </methods>
       </class> <!-- tests.EmployeeTest -->
     </classes>

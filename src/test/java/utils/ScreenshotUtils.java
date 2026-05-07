@@ -10,12 +10,20 @@ import org.openqa.selenium.WebDriver;
 
 public class ScreenshotUtils {
 
-    public static void capture(WebDriver driver, String name) throws IOException {
+    public static String capture(WebDriver driver, String testName)
+            throws IOException {
 
-        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File src =
+                ((TakesScreenshot) driver)
+                        .getScreenshotAs(OutputType.FILE);
 
-        File dest = new File("screenshots/" + name + ".png");
+        String path =
+                "screenshots/" + testName + ".png";
+
+        File dest = new File(path);
 
         FileUtils.copyFile(src, dest);
+
+        return path;
     }
 }

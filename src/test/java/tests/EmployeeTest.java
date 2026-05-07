@@ -18,7 +18,7 @@ public class EmployeeTest extends BaseTest {
 
         EmployeePage ep = new EmployeePage(driver);
 
-        ep.addEmployee("Kishan", "Test");
+        ep.addEmployee("Kishan", "Test2");
 
         Thread.sleep(5000);
 
