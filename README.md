@@ -76,6 +76,11 @@ src/test/java
 
 ---
 
+## Added Features
+- Extent Reports integration
+- Screenshot capture on failure
+- Professional HTML reporting
+
 # 🧪 Test Scenarios Covered
 
 ## Login Module
